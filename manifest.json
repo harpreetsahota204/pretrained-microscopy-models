@@ -1,0 +1,132 @@
+{
+    "name": "xxxx/",
+    "url": "https://github.com/harpreetsahota204/pretrained-microscopy-models",
+    "models": [
+        {
+            "base_name": "/",
+            "base_filename":"",
+            "author": "",
+            "license": "",
+            "source": "",
+            "description": "",
+            "tags": [
+                "segmentation"
+            ],
+            "date_added": "2025-17-09",
+            "requirements": {
+                "packages": ["huggingface-hub", "segmentation-models-pytorch<=0.2.1 ", "torch", "torchvision"],
+                "cpu": {
+                    "support": true
+                },
+                "gpu": {
+                    "support": true
+                }
+            }
+        },
+        {
+            "base_name": "/",
+            "base_filename":"",
+            "author": "",
+            "license": "",
+            "source": "",
+            "description": "",
+            "tags": [
+                "segmentation"
+            ],
+            "date_added": "2025-17-09",
+            "requirements": {
+                "packages": ["huggingface-hub", "segmentation-models-pytorch<=0.2.1 ", "torch", "torchvision"],
+                "cpu": {
+                    "support": true
+                },
+                "gpu": {
+                    "support": true
+                }
+            }
+        },
+        {
+            "base_name": "/",
+            "base_filename":"",
+            "author": "",
+            "license": "",
+            "source": "",
+            "description": "",
+            "tags": [
+                "segmentation"
+            ],
+            "date_added": "2025-17-09",
+            "requirements": {
+                "packages": ["huggingface-hub", "segmentation-models-pytorch<=0.2.1 ", "torch", "torchvision"],
+                "cpu": {
+                    "support": true
+                },
+                "gpu": {
+                    "support": true
+                }
+            }
+        },
+        {
+            "base_name": "/",
+            "base_filename":"",
+            "author": "",
+            "license": "",
+            "source": "",
+            "description": "",
+            "tags": [
+                "segmentation"
+            ],
+            "date_added": "2025-17-09",
+            "requirements": {
+                "packages": ["huggingface-hub", "segmentation-models-pytorch<=0.2.1 ", "torch", "torchvision"],
+                "cpu": {
+                    "support": true
+                },
+                "gpu": {
+                    "support": true
+                }
+            }
+        },
+        {
+            "base_name": "/",
+            "base_filename":"",
+            "author": "",
+            "license": "",
+            "source": "",
+            "description": "",
+            "tags": [
+                "segmentation"
+            ],
+            "date_added": "2025-17-09",
+            "requirements": {
+                "packages": ["huggingface-hub", "segmentation-models-pytorch<=0.2.1 ", "torch", "torchvision"],
+                "cpu": {
+                    "support": true
+                },
+                "gpu": {
+                    "support": true
+                }
+            }
+        },
+        {
+            "base_name": "/",
+            "base_filename":"",
+            "author": "",
+            "license": "",
+            "source": "",
+            "description": "",
+            "tags": [
+                "segmentation"
+            ],
+            "date_added": "2025-17-09",
+            "requirements": {
+                "packages": ["huggingface-hub", "segmentation-models-pytorch<=0.2.1 ", "torch", "torchvision"],
+                "cpu": {
+                    "support": true
+                },
+                "gpu": {
+                    "support": true
+                }
+            }
+        }
+    ]
+}
