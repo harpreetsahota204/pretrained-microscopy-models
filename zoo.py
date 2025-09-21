@@ -36,6 +36,10 @@ class Pretrained_Microscopy_Model(Model):
     def __init__(
         self,
         model_path: str,
+        classes: int = 4,
+        architecture: str = 'UnetPlusPlus',
+        encoder: str = 'resnet50',
+        encoder_weights: str = 'micronet',
         torch_dtype: torch.dtype = None,
         **kwargs
     ):
@@ -52,11 +56,11 @@ class Pretrained_Microscopy_Model(Model):
         torch.backends.cudnn.deterministic = True
         torch.backends.cudnn.benchmark = False
         
-        # Configuration
-        self.architecture = 'UnetPlusPlus'
-        self.encoder = 'resnet50'
-        self.encoder_weights = 'micronet'
-        self.classes = 4
+        # Configuration - can be customized via parameters
+        self.architecture = architecture
+        self.encoder = encoder
+        self.encoder_weights = encoder_weights
+        self.classes = classes
         
         # Create the model (initially with no pretrained weights)
         self.model = pmm.segmentation_training.create_segmentation_model(
@@ -128,13 +132,18 @@ class Pretrained_Microscopy_Model(Model):
         # Debug output
         logger.debug(f"Predictions shape: {predictions.shape}")
         logger.debug(f"Any detections: {predictions.any()}")
-        for i in range(predictions.shape[2]):
+        
+        # Get actual number of classes from predictions
+        num_classes = predictions.shape[2] if len(predictions.shape) > 2 else 1
+        logger.debug(f"Number of classes in predictions: {num_classes}")
+        
+        for i in range(num_classes):
             logger.debug(f"  Class {i+1}: {predictions[..., i].sum()} pixels detected")
         
         # Convert to FiftyOne segmentation format
         # predictions shape: (H, W, num_classes) with values 0 or 1
         mask = np.zeros(predictions.shape[:2], dtype=np.uint8)
-        for class_idx in range(self.classes):
+        for class_idx in range(num_classes):
             class_mask = predictions[..., class_idx] > 0.5
             mask[class_mask] = class_idx + 1  # Class IDs start from 1
         
